@@ -3,3 +3,8 @@
     width: 50%;
   }
 }
+
+.card .btn {
+  width: 50%;
+  margin: 0.5rem auto;
+}
