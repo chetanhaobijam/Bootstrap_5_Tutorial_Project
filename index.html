@@ -12,6 +12,9 @@
   <!-- Bootstrap Icon CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
+  <!-- Mapbox CSS -->
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -346,9 +349,26 @@
             </li>
           </ul>
         </div>
+        <div class="col-md">
+          <div id="map"></div>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- Mapbox JS -->
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiY2hldGFuaGFvYmlqYW0iLCJhIjoiY2t1bWZ2cjJvM3M3ejJvbzhwY21kNW9kZCJ9.qk8g9_CzTLx8AUX6yCGIdA';
+    var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [-71.060982, 42.35725],
+      zoom: 18
+    });
+    map.addControl(new mapboxgl.NavigationControl());
+  </script>
 
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
